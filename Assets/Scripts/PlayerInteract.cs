@@ -19,7 +19,10 @@ public class PlayerInteract : MonoBehaviour
             Collider2D[] colliderArray = Physics2D.OverlapCircleAll(transform.position, interactRange);
             foreach (Collider2D collider in colliderArray)
             {
-                Debug.Log(collider);
+                if (collider.TryGetComponent(out Interactable interactable))
+                {
+                    interactable.Interact();
+                }
             }
         }
         
