@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-    public GameObject interact_text;
+    public GameObject interactText;
 
     // Start is called before the first frame update
     void Start()
     {
-        interact_text.SetActive(false);
+        interactText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,14 +22,14 @@ public class PlayerInteract : MonoBehaviour
             if (collider.TryGetComponent(out Interactable interactable))
             {
                 interactable.Interact();
-                interact_text.SetActive(true);
+                interactText.SetActive(true);
             }
             else
             {
-                interact_text.SetActive(false);
+                interactText.SetActive(false);
             }
         }
-        if (Input.GetKeyDown(KeyCode.E) && interact_text.activeSelf)
+        if (Input.GetKeyDown(KeyCode.E) && interactText.activeSelf)
         {
             Debug.Log("omg banana");
         }
