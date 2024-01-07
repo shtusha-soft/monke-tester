@@ -37,7 +37,7 @@ public class MonkeControl : MonoBehaviour
 
     void Move()
     {
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        rb.velocity = new Vector2(moveDirection.x * moveSpeed, rb.velocity.y);
     }
 
 }
